@@ -2,12 +2,13 @@ import React from 'react';
 import {StyleSheet, Text, View } from 'react-native'; 
 
 export default function Show() {
+    console.log("Page Show");
   return (
     <View style={styles.container}>
-
-      <Text style={{color: '#888', fontSize: 26}}> 
+        {/* console.log(Show page) */}
+      {/* <Text style={{color: 'white', fontSize: 26}}> 
         Khadidiatou MAREGA
-      </Text>
+      </Text> */}
     </View>
   );
 }
@@ -15,7 +16,7 @@ export default function Show() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },

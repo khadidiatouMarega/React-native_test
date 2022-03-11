@@ -1,22 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
 
 export default function Update() {
+
+  console.log("Page update");
+  const [data, setData] = useState(null);
+  const [print, setPrint] = useState(false);
+
+  function getData(val){
+      setData(val.target.value);
+      console.warn(val.target.value);
+  } 
   return (
     <View style={styles.container}>
       <Text style={styles.instructions}>
        With Vric à Vrac, life is green!
       </Text>
-
-      <TouchableOpacity
-        onPress={() => alert('Hello, world!')}
-        style={{ backgroundColor: 'darkgreen' }}>
-        <Text style={{ fontSize: 20, color: '#fffff' }}>You Write ...</Text>
-      </TouchableOpacity>
       <TextInput style ={styles.input}
-           placeholder=" type your text "
-          
+           placeholder=" type your text " onChange={getData}
         />
+        {
+          print?
+          <View>{data}</View>
+          :null
+        }
+        <TouchableOpacity
+          onPress={() => setPrint(true)}
+          style={{ backgroundColor: 'darkgreen' }}>
+          <Text style={{ fontSize: 20, color: 'black', 
+           borderRadius: 10, }}>You Wrote :</Text>
+        </TouchableOpacity>
     </View>
   );
 }
@@ -24,7 +37,7 @@ export default function Update() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#b6eea4',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -34,12 +47,18 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   instructions: {
-    color: '#888',
+    color: 'black',
     fontSize: 18,
     marginHorizontal: 15,
     marginBottom: 10,
   },
   input :{
-
+    borderWidth:  2, 
+    borderStyle:  'solid',
+    borderRadius: 3,
+    margintop: 25,
+    marginBottom:  15,
+    color: 'black',
+    fontSize: 18,
   }
 });
