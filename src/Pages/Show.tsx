@@ -5,8 +5,7 @@ export default function Show() {
     console.log("Page Show");
   return (
     <View style={styles.container}>
-        {/* console.log(Show page) */}
-      {/* <Text style={{color: 'white', fontSize: 26}}> 
+      {/* <Text style={{color: 'black', fontSize: 26}}> 
         Khadidiatou MAREGA
       </Text> */}
     </View>

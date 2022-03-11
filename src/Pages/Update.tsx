@@ -14,16 +14,16 @@ export default function Update() {
   return (
     <View style={styles.container}>
       <Text style={styles.instructions}>
-       With Vric à Vrac, life is green!
-      </Text>
-      <TextInput style ={styles.input}
-           placeholder=" type your text " onChange={getData}
-        />
-        {
+       With Vric à Vrac, life is green!{
           print?
           <View>{data}</View>
           :null
         }
+      </Text>
+      <TextInput style ={styles.input}
+           placeholder=" type your text " onChange={getData}
+        />
+        
         <TouchableOpacity
           onPress={() => setPrint(true)}
           style={{ backgroundColor: 'darkgreen' }}>
