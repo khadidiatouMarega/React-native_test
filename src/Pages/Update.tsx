@@ -5,27 +5,28 @@ export default function Update() {
 
   console.log("Page update");
   const [data, setData] = useState(null);
-  const [print, setPrint] = useState(false);
+  const [text, setText] = useState("With Vric à Vrac, life is green!");
 
-  function getData(val){
+  function handleSubmit(){
+    if(data){
+    setText(data);
+  }
+  }
+
+  function getData(val:any){
       setData(val.target.value);
       console.warn(val.target.value);
+      // console.log(val)
   } 
   return (
     <View style={styles.container}>
-      <Text style={styles.instructions}>
-       With Vric à Vrac, life is green!{
-          print?
-          <View>{data}</View>
-          :null
-        }
-      </Text>
+      { text }
       <TextInput style ={styles.input}
            placeholder=" type your text " onChange={getData}
         />
         
         <TouchableOpacity
-          onPress={() => setPrint(true)}
+          onPress={() => handleSubmit()}
           style={{ backgroundColor: 'darkgreen' }}>
           <Text style={{ fontSize: 20, color: 'black', 
            borderRadius: 10, }}>You Wrote :</Text>
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     borderWidth:  2, 
     borderStyle:  'solid',
     borderRadius: 3,
-    margintop: 25,
+    marginTop: 25,
     marginBottom:  15,
     color: 'black',
     fontSize: 18,

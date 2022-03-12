@@ -31,24 +31,24 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //   );
 // }
 
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
 
-function MyTabs() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Update" component={Update} />
-      <Tab.Screen name="Show" component={Show} />
-    </Tab.Navigator>
-  );
-}
+// function MyTabs() {
+//   return (
+//     <Tab.Navigator>
+//       <Tab.Screen name="Home" component={Home} />
+//       <Tab.Screen name="Update" component={Update} />
+//       <Tab.Screen name="Show" component={Show} />
+//     </Tab.Navigator>
+//   );
+// }
 
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <View style={styles.container}>
       <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+      <Stack.Navigator initialRouteName='Update'>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Update" component={Update} />
         <Stack.Screen name="Show" component={Show} />

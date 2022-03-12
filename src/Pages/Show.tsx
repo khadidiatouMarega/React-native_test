@@ -1,13 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, View } from 'react-native'; 
+import {StyleSheet, Text, View } from 'react-native';
 
 export default function Show() {
     console.log("Page Show");
   return (
     <View style={styles.container}>
-      {/* <Text style={{color: 'black', fontSize: 26}}> 
+      <Text style={{color: 'black', fontSize: 26}}> 
         Khadidiatou MAREGA
-      </Text> */}
+      </Text>
     </View>
   );
 }
