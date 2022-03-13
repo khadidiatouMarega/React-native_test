@@ -20,8 +20,9 @@ const Update = () =>{
            placeholder=" type your  message " 
            onChangeText={mytext=>setText(mytext)}
         />
+        
       <TouchableOpacity
-        //  onPress={()=>handleSubmit()}
+         onPress={()=> handleSubmit}
           style={{ backgroundColor: 'darkgreen' }}>
           <Text style={{ fontSize: 20, color: 'black', 
            borderRadius: 10, }}>Show message:</Text>
