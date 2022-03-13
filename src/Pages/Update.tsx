@@ -20,9 +20,9 @@ export default function Update() {
   } 
   return (
     <View style={styles.container}>
-      { text }
+    <Text>  { text }</Text>
       <TextInput style ={styles.input}
-           placeholder=" type your text " onChange={getData}
+           placeholder=" type your text " onChangeText={() => getData}
         />
         
         <TouchableOpacity
