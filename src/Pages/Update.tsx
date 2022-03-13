@@ -1,36 +1,31 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
 
-export default function Update() {
+const Update = () =>{
 
   console.log("Page update");
-  const [data, setData] = useState(null);
   const [text, setText] = useState("With Vric à Vrac, life is green!");
+  const [mytext, setMytext] = useState("");
 
+// console.log(getData(data));
   function handleSubmit(){
-    if(data){
-    setText(data);
+    if(mytext){
+      setText(mytext)
   }
   }
-
-  function getData(val:any){
-      setData(val.target.value);
-      console.warn(val.target.value);
-      // console.log(val)
-  } 
   return (
     <View style={styles.container}>
-    <Text>  { text }</Text>
+      <Text>  { text }</Text>
       <TextInput style ={styles.input}
-           placeholder=" type your text " onChangeText={() => getData}
+           placeholder=" type your  message " 
+           onChangeText={mytext=>setText(mytext)}
         />
-        
-        <TouchableOpacity
-          onPress={() => handleSubmit()}
+      <TouchableOpacity
+        //  onPress={()=>handleSubmit()}
           style={{ backgroundColor: 'darkgreen' }}>
           <Text style={{ fontSize: 20, color: 'black', 
-           borderRadius: 10, }}>You Wrote :</Text>
-        </TouchableOpacity>
+           borderRadius: 10, }}>Show message:</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -62,4 +57,6 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 18,
   }
+
 });
+export default Update;

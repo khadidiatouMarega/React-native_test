@@ -1,13 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View } from 'react-native';
+import setMytext from './Update';
 
 export default function Show() {
     console.log("Show Page");
   return (
     <View style={styles.container}>
-      <Text style={{color: 'white', fontSize: 26}}> 
-        Khadidiatou MAREGA
-      </Text>
+      <Text>  { setMytext }</Text>
     </View>
   );
 }
